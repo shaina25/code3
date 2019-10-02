@@ -9,7 +9,7 @@ class Node
     Node *next;  
 };  
   
-void segregateEvenOdd(Node **head_ref)  
+void segregateEvenOdd(Node *head_ref)  
 {  
     Node *end = *head_ref;  
     Node *prev = NULL;  
@@ -23,7 +23,7 @@ void segregateEvenOdd(Node **head_ref)
   
     /* Consider all odd nodes before the first  
      even node and move then after end */
-    while (curr->data % 3 != 0 && curr != end)  
+    while (curr->data % 2 != 0 && curr != end)  
     {  
         new_end->next = curr;  
         curr = curr->next;  
@@ -90,7 +90,7 @@ void segregateEvenOdd(Node **head_ref)
   
 /* UTILITY FUNCTIONS */
 /* Function to insert a node at the beginning */
-void push(Node** head_ref, int new_data)  
+void push(Node* head_ref, int new_data)  
 {  
     /* allocate node */
     Node* new_node = new Node(); 
